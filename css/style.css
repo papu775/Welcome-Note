@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary:#EEBF00;
+    --secondary:#232B38;
+    --ternary:#6C6C6C;
+    --pure:#ececec;
+    --heaven:#FFFFFF;
+    --danger:#FE4545;
+    --success:#5cb85c; 
+    --box-shadow:rgba(214, 214, 214, 0.863);
+    --primary-shadow:rgba(203, 255, 196, 0.966);
+    --danger-shadow:rgba(255, 229, 227, 0.932);
+    font-size: 62.5%;
+}
+body{
+    max-width: 100vw;
+    font-family: 'Poppins', sans-serif;
+    background: var(--pure);
+}
+/* ################## start Utility Class ################# */
+.container{
+    width: 95%;
+    margin: auto;
+}
+/* ################## end Utility Class ################# */
+
+.header{
+    padding: 1rem 0;
+    background: var(--primary);
+}
+.header .header-container{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+.header .header-container i{
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-right: .5rem;
+    color: var(--secondary);
+}
+.header .header-container h2{
+    font-weight: 400;
+}
+
+
+/* ############# ADD content-box ##################### */
+#add-note-section{
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: flex-end;
+}
+ button {
+	 position: relative;
+	 display: inline-block;
+	 cursor: pointer;
+	 outline: none;
+	 border: 0;
+	 vertical-align: middle;
+	 text-decoration: none;
+	 background: transparent;
+	 padding: 0;
+	 font-size: inherit;
+	 font-family: inherit;
+}
+ button.add-note-btn {
+	 width: 12rem;
+	 height: auto;
+}
+ button.add-note-btn .circle {
+	 transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	 position: relative;
+	 display: block;
+	 margin: 0;
+	 width: 3rem;
+	 height: 3rem;
+	 background: var(--primary);
+	 border-radius: 1.625rem;
+}
+ button.add-note-btn .circle .icon {
+	 transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	 position: absolute;
+	 top: 0;
+	 bottom: 0;
+	 margin: auto;
+	 background: var(--heaven);
+}
+ button.add-note-btn .circle .icon.arrow {
+	 transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	 left: 0.625rem;
+	 width: 1.125rem;
+	 height: 0.125rem;
+	 background: none;
+}
+ button.add-note-btn .circle .icon.arrow::before {
+	 position: absolute;
+	 content: '';
+	 top: -0.25rem;
+	 right: 0.0625rem;
+	 width: 0.625rem;
+	 height: 0.625rem;
+	 border-top: 0.125rem solid var(--heaven);
+	 border-right: 0.125rem solid var(--heaven);
+	 transform: rotate(45deg);
+}
+ button.add-note-btn .button-text {
+	 transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 padding: 0.75rem 0;
+	 margin: 0 0 0 1.85rem;
+	 color: var(--secondary);
+	 font-weight: 700;
+	 line-height: 1.6;
+	 text-align: center;
+	 text-transform: uppercase;
+}
+ button:hover .circle {
+	 width: 100%;
+}
+ button:hover .circle .icon.arrow {
+	 background: var(--heaven);
+	 transform: translate(1rem, 0);
+}
+ button:hover .button-text {
+	 color: var(--heaven);
+}
+
+/* ######### Content ########## */
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 4rem;
+}
+.content .content-box{
+    flex-basis: 300px;
+    margin-bottom: 2rem;
+    overflow-y: scroll;
+    height: 190px;
+    background: var(--heaven);
+    margin-right: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 5px 5px  var(--box-shadow);
+}
+.content .content-box .button-section{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    display: flex;
+}
+.content .content-box .button-section .fa-edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--success);
+    color: var(--heaven);
+    border-radius: 50%;
+    padding: .7em;
+    margin-right: .5rem;
+    font-size: 1.3rem;
+    
+}
+.content .content-box .button-section .fa-edit:hover{
+    color: var(--success);
+    background: var(--heaven);
+    box-shadow: 2px 2px 2px 2px var(--primary-shadow);
+}
+.content .content-box .button-section .fa-trash-alt{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: var(--danger);
+     color: var(--heaven);
+     border-radius: 50%;
+     padding: .7em;
+     margin-right: .5rem;
+     font-size: 1.3rem;
+} 
+.content .content-box .button-section .fa-trash-alt:hover{
+    color: var(--danger);
+    background: var(--heaven);
+    box-shadow: 2px 2px 2px 2px var(--danger-shadow);
+}
+.content .content-box textarea{
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    font-family: 'Handlee', cursive;
+    border: none;
+    outline: none;
+    /* border: .1rem solid red; */
+}
+.content .content-box #main{
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    font-family: 'Handlee', cursive;
+    border: none;
+    outline: none;
+    color: var(--secondary);
+}
+
+.hidden{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .content .content-box{
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+}
+
